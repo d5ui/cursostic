@@ -1,0 +1,751 @@
+/*
+Theme Name: Astra Child - CursosTIC
+Theme URI: https://www.cursostic.es
+Description: Child theme profesional de Astra optimizado para sitio de cursos TIC con SEO, custom post types y diseño moderno
+Author: CursosTIC
+Author URI: https://www.cursostic.es
+Template: astra
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child-cursostic
+*/
+
+/* ==========================================================================
+   Variables CSS - Colores Personalizables
+   ========================================================================== */
+:root {
+    /* Colores principales - PERSONALIZA ESTOS VALORES */
+    --cursostic-primary: #2563eb;
+    --cursostic-primary-dark: #1e40af;
+    --cursostic-primary-light: #3b82f6;
+    --cursostic-secondary: #10b981;
+    --cursostic-secondary-dark: #059669;
+    --cursostic-accent: #f59e0b;
+
+    /* Colores de texto */
+    --cursostic-text-primary: #1f2937;
+    --cursostic-text-secondary: #6b7280;
+    --cursostic-text-light: #9ca3af;
+
+    /* Fondos */
+    --cursostic-bg-light: #f9fafb;
+    --cursostic-bg-white: #ffffff;
+    --cursostic-bg-dark: #111827;
+
+    /* Bordes */
+    --cursostic-border: #e5e7eb;
+    --cursostic-border-light: #f3f4f6;
+
+    /* Sombras */
+    --cursostic-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --cursostic-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --cursostic-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --cursostic-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --cursostic-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Transiciones */
+    --cursostic-transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Layout General
+   ========================================================================== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--cursostic-text-primary);
+    line-height: 1.6;
+}
+
+.site-content {
+    background-color: var(--cursostic-bg-light);
+}
+
+/* ==========================================================================
+   Banner Principal
+   ========================================================================== */
+.cursostic-hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, var(--cursostic-primary) 0%, var(--cursostic-primary-dark) 100%);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.cursostic-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.cursostic-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cursostic-hero-banner h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cursostic-hero-banner p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   Buscador de Cursos
+   ========================================================================== */
+.cursostic-search-wrapper {
+    max-width: 700px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+.cursostic-search-form {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: var(--cursostic-shadow-xl);
+}
+
+.cursostic-search-form input[type="search"] {
+    flex: 1;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+    outline: none;
+}
+
+.cursostic-search-form button {
+    background: var(--cursostic-secondary);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--cursostic-transition);
+    white-space: nowrap;
+}
+
+.cursostic-search-form button:hover {
+    background: var(--cursostic-secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--cursostic-shadow-lg);
+}
+
+/* ==========================================================================
+   Filtros de Cursos
+   ========================================================================== */
+.cursostic-filters-wrapper {
+    background: white;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 12px;
+    box-shadow: var(--cursostic-shadow);
+}
+
+.cursostic-filters-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--cursostic-text-primary);
+}
+
+.cursostic-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cursostic-filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.cursostic-filter-group label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--cursostic-text-secondary);
+    font-size: 0.875rem;
+}
+
+.cursostic-filter-group select {
+    padding: 10px 15px;
+    border: 2px solid var(--cursostic-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--cursostic-transition);
+    background: white;
+}
+
+.cursostic-filter-group select:hover,
+.cursostic-filter-group select:focus {
+    border-color: var(--cursostic-primary);
+    outline: none;
+}
+
+.cursostic-filters-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cursostic-btn-filter {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--cursostic-transition);
+    font-size: 0.9rem;
+}
+
+.cursostic-btn-apply {
+    background: var(--cursostic-primary);
+    color: white;
+}
+
+.cursostic-btn-apply:hover {
+    background: var(--cursostic-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--cursostic-shadow-md);
+}
+
+.cursostic-btn-reset {
+    background: var(--cursostic-bg-light);
+    color: var(--cursostic-text-secondary);
+}
+
+.cursostic-btn-reset:hover {
+    background: var(--cursostic-border);
+}
+
+/* ==========================================================================
+   Grid de Tarjetas de Cursos
+   ========================================================================== */
+.cursostic-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* ==========================================================================
+   Tarjeta de Curso
+   ========================================================================== */
+.cursostic-course-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--cursostic-shadow);
+    transition: var(--cursostic-transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cursostic-course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--cursostic-shadow-xl);
+}
+
+.cursostic-course-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--cursostic-bg-light);
+}
+
+.cursostic-course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--cursostic-transition);
+}
+
+.cursostic-course-card:hover .cursostic-course-image img {
+    transform: scale(1.1);
+}
+
+.cursostic-course-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--cursostic-accent);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cursostic-course-level {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.cursostic-course-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cursostic-course-category {
+    color: var(--cursostic-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.cursostic-course-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cursostic-text-primary);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.cursostic-course-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--cursostic-transition);
+}
+
+.cursostic-course-title a:hover {
+    color: var(--cursostic-primary);
+}
+
+.cursostic-course-excerpt {
+    color: var(--cursostic-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.cursostic-course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cursostic-border-light);
+    font-size: 0.875rem;
+    color: var(--cursostic-text-secondary);
+}
+
+.cursostic-course-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cursostic-course-meta-item svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.cursostic-course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background: var(--cursostic-bg-light);
+    border-top: 1px solid var(--cursostic-border-light);
+}
+
+.cursostic-course-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cursostic-primary);
+}
+
+.cursostic-course-price.free {
+    color: var(--cursostic-secondary);
+}
+
+.cursostic-course-btn {
+    background: var(--cursostic-primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--cursostic-transition);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cursostic-course-btn:hover {
+    background: var(--cursostic-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--cursostic-shadow-md);
+}
+
+/* ==========================================================================
+   Ficha Individual de Curso
+   ========================================================================== */
+.cursostic-single-course {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cursostic-course-header {
+    background: linear-gradient(135deg, var(--cursostic-primary) 0%, var(--cursostic-primary-dark) 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.cursostic-course-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.cursostic-course-header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.cursostic-course-main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.cursostic-course-info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--cursostic-shadow-lg);
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.cursostic-course-details {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--cursostic-shadow);
+}
+
+.cursostic-course-details h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: var(--cursostic-text-primary);
+    border-bottom: 3px solid var(--cursostic-primary);
+    padding-bottom: 10px;
+}
+
+.cursostic-course-details h3 {
+    font-size: 1.35rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--cursostic-text-primary);
+}
+
+/* Lista de características del curso */
+.cursostic-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.cursostic-features-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    color: var(--cursostic-text-secondary);
+    border-bottom: 1px solid var(--cursostic-border-light);
+}
+
+.cursostic-features-list li:last-child {
+    border-bottom: none;
+}
+
+.cursostic-features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cursostic-secondary);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   Blog
+   ========================================================================== */
+.cursostic-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.cursostic-blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--cursostic-shadow);
+    transition: var(--cursostic-transition);
+}
+
+.cursostic-blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--cursostic-shadow-lg);
+}
+
+.cursostic-blog-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.cursostic-blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--cursostic-transition);
+}
+
+.cursostic-blog-card:hover .cursostic-blog-image img {
+    transform: scale(1.05);
+}
+
+.cursostic-blog-content {
+    padding: 25px;
+}
+
+.cursostic-blog-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.875rem;
+    color: var(--cursostic-text-light);
+    margin-bottom: 12px;
+}
+
+.cursostic-blog-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.cursostic-blog-title a {
+    color: var(--cursostic-text-primary);
+    text-decoration: none;
+    transition: var(--cursostic-transition);
+}
+
+.cursostic-blog-title a:hover {
+    color: var(--cursostic-primary);
+}
+
+.cursostic-blog-excerpt {
+    color: var(--cursostic-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.cursostic-blog-read-more {
+    color: var(--cursostic-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--cursostic-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cursostic-blog-read-more:hover {
+    color: var(--cursostic-primary-dark);
+    gap: 8px;
+}
+
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+.cursostic-breadcrumbs {
+    padding: 15px 0;
+    font-size: 0.875rem;
+    color: var(--cursostic-text-secondary);
+}
+
+.cursostic-breadcrumbs a {
+    color: var(--cursostic-primary);
+    text-decoration: none;
+    transition: var(--cursostic-transition);
+}
+
+.cursostic-breadcrumbs a:hover {
+    color: var(--cursostic-primary-dark);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .cursostic-course-main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cursostic-course-info-card {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .cursostic-hero-banner h1 {
+        font-size: 2rem;
+    }
+
+    .cursostic-hero-banner p {
+        font-size: 1rem;
+    }
+
+    .cursostic-search-form {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .cursostic-search-form input[type="search"],
+    .cursostic-search-form button {
+        border-radius: 8px;
+    }
+
+    .cursostic-courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cursostic-blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cursostic-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .cursostic-course-header {
+        padding: 40px 20px;
+    }
+
+    .cursostic-course-header h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* ==========================================================================
+   Utilidades
+   ========================================================================== */
+.cursostic-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cursostic-container-wide {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cursostic-section {
+    padding: 60px 0;
+}
+
+.cursostic-section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--cursostic-text-primary);
+}
+
+.cursostic-section-subtitle {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--cursostic-text-secondary);
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cursostic-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--cursostic-text-secondary);
+}
+
+.cursostic-no-results {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--cursostic-shadow);
+}
+
+.cursostic-no-results h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cursostic-text-primary);
+}
+
+/* ==========================================================================
+   Animaciones
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cursostic-fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
