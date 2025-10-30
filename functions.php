@@ -72,6 +72,65 @@ function cursostic_page_builder_support() {
 add_action( 'init', 'cursostic_page_builder_support', 15 );
 
 /**
+ * Force theme templates and disable page builders for specific pages
+ * Fuerza el uso de plantillas del theme en la página de inicio
+ */
+function cursostic_force_theme_templates() {
+    // Only on frontend
+    if ( is_admin() ) {
+        return;
+    }
+
+    // Disable Elementor on front page
+    if ( is_front_page() && did_action( 'elementor/loaded' ) ) {
+        add_filter( 'elementor/frontend/builder_content_display', '__return_false', 999 );
+    }
+
+    // Disable Divi builder on front page
+    if ( is_front_page() && function_exists( 'et_pb_is_pagebuilder_used' ) ) {
+        add_filter( 'et_builder_should_load_framework', '__return_false', 999 );
+    }
+}
+add_action( 'template_redirect', 'cursostic_force_theme_templates', 1 );
+
+/**
+ * Clear page builder meta data from front page
+ * Limpia los datos de constructores de la página de inicio
+ */
+function cursostic_clear_builder_data_on_save( $post_id ) {
+    // Only for pages
+    if ( get_post_type( $post_id ) !== 'page' ) {
+        return;
+    }
+
+    // Check if this is the front page
+    if ( get_option( 'page_on_front' ) == $post_id ) {
+        // Clear Elementor data
+        delete_post_meta( $post_id, '_elementor_edit_mode' );
+        delete_post_meta( $post_id, '_elementor_data' );
+
+        // Clear Divi data
+        delete_post_meta( $post_id, '_et_pb_use_builder' );
+    }
+}
+add_action( 'save_post', 'cursostic_clear_builder_data_on_save', 999 );
+
+/**
+ * Force front-page.php template priority
+ * Da máxima prioridad al template front-page.php
+ */
+function cursostic_force_front_page_template( $template ) {
+    if ( is_front_page() ) {
+        $front_page_template = locate_template( array( 'front-page.php' ) );
+        if ( $front_page_template ) {
+            return $front_page_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'template_include', 'cursostic_force_front_page_template', 999 );
+
+/**
  * Enqueue parent and child theme styles
  */
 function cursostic_enqueue_styles() {
