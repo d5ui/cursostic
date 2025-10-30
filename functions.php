@@ -35,6 +35,43 @@ if ( did_action( 'elementor/loaded' ) && file_exists( CURSOSTIC_DIR . '/inc/elem
 }
 
 /**
+ * Page Builder compatibility
+ * Soporte para múltiples constructores de páginas
+ */
+function cursostic_page_builder_support() {
+    // Elementor
+    if ( did_action( 'elementor/loaded' ) ) {
+        add_post_type_support( 'curso', 'elementor' );
+    }
+
+    // Beaver Builder
+    if ( class_exists( 'FLBuilder' ) ) {
+        add_post_type_support( 'curso', 'fl-builder' );
+    }
+
+    // Divi Builder
+    if ( class_exists( 'ET_Builder_Plugin' ) || function_exists( 'et_setup_theme' ) ) {
+        add_post_type_support( 'curso', 'et_pb_layout' );
+    }
+
+    // Brizy
+    if ( class_exists( 'Brizy_Editor' ) ) {
+        add_post_type_support( 'curso', 'brizy' );
+    }
+
+    // WPBakery Page Builder
+    if ( class_exists( 'Vc_Manager' ) ) {
+        add_post_type_support( 'curso', 'vc_grid_builder' );
+    }
+
+    // Oxygen Builder
+    if ( class_exists( 'CT_Component' ) ) {
+        add_post_type_support( 'curso', 'oxygen' );
+    }
+}
+add_action( 'init', 'cursostic_page_builder_support', 15 );
+
+/**
  * Enqueue parent and child theme styles
  */
 function cursostic_enqueue_styles() {

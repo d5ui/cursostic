@@ -62,6 +62,94 @@ body {
 }
 
 /* ==========================================================================
+   Header Profesional
+   ========================================================================== */
+.site-header {
+    background: white;
+    box-shadow: var(--cursostic-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.main-header-bar {
+    padding: 15px 20px !important;
+}
+
+.site-logo-img {
+    max-height: 60px;
+}
+
+.main-navigation {
+    margin: 0;
+}
+
+.main-navigation a {
+    font-weight: 500;
+    color: var(--cursostic-text-primary);
+    transition: var(--cursostic-transition);
+    padding: 10px 15px;
+}
+
+.main-navigation a:hover {
+    color: var(--cursostic-primary);
+}
+
+/* ==========================================================================
+   Footer Profesional
+   ========================================================================== */
+.site-footer {
+    background: var(--cursostic-bg-dark);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 60px 20px 30px;
+    margin-top: 80px;
+}
+
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--cursostic-transition);
+}
+
+.site-footer a:hover {
+    color: white;
+}
+
+.site-footer .widget {
+    margin-bottom: 30px;
+}
+
+.site-footer .widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer .widget ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer .widget ul li:last-child {
+    border-bottom: none;
+}
+
+.site-footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ==========================================================================
    Banner Principal
    ========================================================================== */
 .cursostic-hero-banner {

@@ -1,0 +1,23 @@
+INSTRUCCIONES PARA CREAR SCREENSHOT.PNG
+==========================================
+
+WordPress requiere un archivo screenshot.png de 1200x900px para mostrar una vista previa del theme.
+
+Opción 1: Crear manualmente
+- Dimensiones: 1200x900 píxeles
+- Formato: PNG
+- Contenido sugerido: Captura de pantalla de la página de inicio con el banner hero y tarjetas de cursos
+
+Opción 2: Dejar que WordPress lo genere
+- El theme funcionará sin screenshot.png
+- WordPress mostrará una vista previa en blanco
+
+Opción 3: Usar una herramienta online
+- Ve a: https://www.canva.com
+- Crea un diseño de 1200x900px
+- Diseña algo representativo del theme (colores azules, cursos, etc.)
+- Descarga como PNG y nómbralo "screenshot.png"
+- Súbelo a la raíz del theme
+
+Por ahora, el theme funcionará correctamente sin este archivo.
+Solo es para visualización en el panel de administración de WordPress.
