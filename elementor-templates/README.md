@@ -40,6 +40,25 @@
 
 ---
 
+## ⚠️ PROBLEMAS COMUNES
+
+### Error: "The content area was not found"
+
+Si ves este error al usar el template de Single Curso, **lee la guía completa:**
+
+👉 **`SOLUCION-ERROR-CONTENT-AREA.md`**
+
+**Causa:** El archivo PHP `single-curso.php` antiguo interfería con Elementor.
+**Solución:** He actualizado el archivo para que sea 100% compatible con Elementor.
+
+**Acción requerida:**
+1. Descarga/pull los últimos cambios del repositorio
+2. El archivo `single-curso.php` ahora detecta Elementor automáticamente
+3. Limpia la caché de WordPress y Elementor
+4. Regenera CSS: Elementor → Herramientas → Regenerar CSS
+
+---
+
 ## ✅ INSTALACIÓN EN 3 PASOS
 
 Ya NO necesitas diseñar nada. Los templates están listos para importar.
@@ -223,6 +242,7 @@ En la carpeta `elementor-templates/`:
 **DOCUMENTACIÓN:**
 - 📖 **`README.md`** - Esta guía de instalación
 - 📖 **`ACTIVAR-TEMPLATE-CURSOS.md`** - Guía para activar el template de single curso automáticamente
+- 🔧 **`SOLUCION-ERROR-CONTENT-AREA.md`** - ⚠️ Solución al error "The content area was not found"
 
 **ARCHIVOS ANTIGUOS (deprecados):**
 - ~~home-template.json~~ - Usar home-template-pro.json en su lugar
