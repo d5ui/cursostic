@@ -28,6 +28,16 @@
 ✅ CTA para colaboradores
 ✅ 100% responsive y profesional
 
+### 4️⃣ **single-curso-template-pro.json** - Ficha Individual de Curso ⭐ NUEVO
+✅ Hero banner con gradiente, título y badges dinámicos
+✅ Tabs profesionales (Descripción, Objetivos, Temario, Requisitos)
+✅ Sidebar sticky con precio, botón inscripción e info del curso
+✅ Accordion para el temario
+✅ Sección de cursos relacionados automática
+✅ FAQ específica del curso
+✅ 100% integrado con campos personalizados
+✅ Diseño conversion-optimized (optimizado para conversiones)
+
 ---
 
 ## ✅ INSTALACIÓN EN 3 PASOS
@@ -204,10 +214,15 @@ Fondo:       #f9fafb (gris claro)
 
 En la carpeta `elementor-templates/`:
 
+**TEMPLATES ELEMENTOR:**
 - ✅ **`home-template-pro.json`** - Página de inicio profesional completa
 - ✅ **`cursos-template-pro.json`** - Página de cursos con filtros sidebar
 - ✅ **`blog-template-pro.json`** - Página de blog estilo revista profesional
+- ⭐ **`single-curso-template-pro.json`** - Ficha individual de curso (NUEVO)
+
+**DOCUMENTACIÓN:**
 - 📖 **`README.md`** - Esta guía de instalación
+- 📖 **`ACTIVAR-TEMPLATE-CURSOS.md`** - Guía para activar el template de single curso automáticamente
 
 **ARCHIVOS ANTIGUOS (deprecados):**
 - ~~home-template.json~~ - Usar home-template-pro.json en su lugar
@@ -244,7 +259,25 @@ En la carpeta `elementor-templates/`:
 5. ✅ Configura URL: `/blog/` en Ajustes → Lectura → Página de entradas
 6. ✅ Opcional: Integrar formulario de newsletter (Contact Form 7, Mailchimp, etc.)
 
-### PASO D: Personalización
+### PASO D: Ficha Individual de Curso (Single Curso) ⭐ IMPORTANTE
+
+**Este template se aplica AUTOMÁTICAMENTE a todos los cursos.**
+
+1. ✅ Importar `single-curso-template-pro.json`
+2. ✅ **Leer el archivo `ACTIVAR-TEMPLATE-CURSOS.md` para instrucciones completas**
+3. ✅ Opción A (Recomendada - Requiere Elementor Pro):
+   - Crear nuevo "Single Post Template" en Elementor
+   - Importar el template
+   - Configurar Display Conditions: "Curso | Todos"
+4. ✅ Opción B (Sin Elementor Pro):
+   - Obtener el ID del template importado
+   - Añadir código a functions.php (ver guía)
+5. ✅ Verificar: Visita cualquier curso y verás el diseño profesional
+6. ✅ Personalizar: Edita el template global para cambiar diseño de todos los cursos
+
+**📖 GUÍA COMPLETA:** `elementor-templates/ACTIVAR-TEMPLATE-CURSOS.md`
+
+### PASO E: Personalización
 
 1. 🎨 Edita textos con Elementor
 2. 🎨 Cambia colores (usa: #2563eb, #10b981, #f59e0b)

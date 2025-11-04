@@ -1,0 +1,219 @@
+{
+  "content": [
+    {
+      "id": "single-curso-hero",
+      "elType": "section",
+      "settings": {
+        "structure": "10",
+        "background_background": "gradient",
+        "background_color": "#1e40af",
+        "background_color_b": "#0f172a",
+        "background_gradient_angle": {"unit": "deg", "size": 135},
+        "padding": {"unit": "px", "top": "40", "right": "20", "bottom": "40", "left": "20"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "html",
+            "settings": {
+              "html": "<?php\n// Breadcrumbs\necho '<div style=\"margin-bottom: 20px; font-size: 14px; color: rgba(255,255,255,0.8);\">';\necho '<a href=\"/\" style=\"color: rgba(255,255,255,0.8); text-decoration: none;\">Inicio</a> / ';\necho '<a href=\"/cursos\" style=\"color: rgba(255,255,255,0.8); text-decoration: none;\">Cursos</a> / ';\n$categoria = get_the_terms(get_the_ID(), 'categoria-curso');\nif ($categoria && !is_wp_error($categoria)) {\n  $cat = array_shift($categoria);\n  echo '<a href=\"' . get_term_link($cat) . '\" style=\"color: rgba(255,255,255,0.8); text-decoration: none;\">' . esc_html($cat->name) . '</a> / ';\n}\necho '<span style=\"color: white; font-weight: 600;\">' . get_the_title() . '</span>';\necho '</div>';\n?>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "theme-post-title",
+            "settings": {
+              "title_color": "#ffffff",
+              "typography_font_size": {"unit": "px", "size": 38},
+              "typography_font_size_mobile": {"unit": "px", "size": 28},
+              "typography_font_weight": "700",
+              "typography_line_height": {"unit": "em", "size": 1.3}
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "html",
+            "settings": {
+              "html": "<?php\n$excerpt = get_the_excerpt();\nif ($excerpt) {\n  echo '<p style=\"color: rgba(255,255,255,0.95); font-size: 18px; line-height: 1.6; margin: 15px 0 25px 0; max-width: 800px;\">' . esc_html($excerpt) . '</p>';\n}\n?>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "html",
+            "settings": {
+              "html": "<?php\n// Badges y meta información\necho '<div style=\"display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 20px;\">';\n\n// Nivel\n$nivel = get_the_terms(get_the_ID(), 'nivel-curso');\nif ($nivel && !is_wp_error($nivel)) {\n  $nivel_term = array_shift($nivel);\n  $nivel_color = '#10b981'; // verde por defecto\n  if ($nivel_term->slug == 'avanzado') $nivel_color = '#ef4444';\n  if ($nivel_term->slug == 'intermedio') $nivel_color = '#f59e0b';\n  echo '<span style=\"background: ' . $nivel_color . '; color: white; padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: 600;\">📊 ' . esc_html($nivel_term->name) . '</span>';\n}\n\n// Modalidad\n$modalidad = get_the_terms(get_the_ID(), 'modalidad-curso');\nif ($modalidad && !is_wp_error($modalidad)) {\n  $mod = array_shift($modalidad);\n  echo '<span style=\"background: rgba(255,255,255,0.2); color: white; padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: 600;\">💻 ' . esc_html($mod->name) . '</span>';\n}\n\n// Duración\n$duracion = get_post_meta(get_the_ID(), 'curso_duracion', true);\nif ($duracion) {\n  echo '<span style=\"background: rgba(255,255,255,0.2); color: white; padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: 600;\">⏱️ ' . esc_html($duracion) . '</span>';\n}\n\n// Plazas disponibles\n$plazas = get_post_meta(get_the_ID(), 'curso_plazas_disponibles', true);\nif ($plazas && $plazas > 0) {\n  echo '<span style=\"background: #f59e0b; color: white; padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: 600; animation: pulse 2s infinite;\">🔥 ' . $plazas . ' plazas disponibles</span>';\n}\n\necho '</div>';\n?>\n<style>\n@keyframes pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.8; }\n}\n</style>"
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "single-curso-main-content",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": {"unit": "px", "size": 1400},
+        "gap": "extended",
+        "padding": {"unit": "px", "top": "60", "bottom": "60"}
+      },
+      "elements": [
+        {
+          "id": "content-column",
+          "elType": "column",
+          "settings": {
+            "_column_size": 66,
+            "_column_order": 1
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "theme-post-featured-image",
+              "settings": {
+                "image_size": "full",
+                "image_border_radius": {"unit": "px", "top": 16, "right": 16, "bottom": 16, "left": 16},
+                "image_box_shadow_box_shadow_type": "yes",
+                "image_box_shadow_box_shadow": {"horizontal": 0, "vertical": 8, "blur": 24, "color": "rgba(0,0,0,0.1)"}
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {"space": {"unit": "px", "size": 40}}
+            },
+            {
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class='cursostic-tabs-container'>\n  <div class='cursostic-tabs-header' style='display: flex; gap: 8px; border-bottom: 2px solid #e5e7eb; margin-bottom: 30px; flex-wrap: wrap;'>\n    <button class='cursostic-tab-btn active' data-tab='descripcion' style='padding: 14px 24px; background: #2563eb; color: white; border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 15px;'>📝 Descripción</button>\n    <button class='cursostic-tab-btn' data-tab='objetivos' style='padding: 14px 24px; background: #f3f4f6; color: #6b7280; border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 15px;'>🎯 Qué aprenderás</button>\n    <button class='cursostic-tab-btn' data-tab='temario' style='padding: 14px 24px; background: #f3f4f6; color: #6b7280; border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 15px;'>📚 Temario</button>\n    <button class='cursostic-tab-btn' data-tab='requisitos' style='padding: 14px 24px; background: #f3f4f6; color: #6b7280; border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 15px;'>✅ Requisitos</button>\n  </div>\n\n  <div class='cursostic-tab-content active' data-content='descripcion' style='padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);'>\n    <h3 style='color: #1f2937; font-size: 24px; font-weight: 700; margin-top: 0;'>Descripción del Curso</h3>\n    <?php the_content(); ?>\n  </div>\n\n  <div class='cursostic-tab-content' data-content='objetivos' style='display: none; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);'>\n    <h3 style='color: #1f2937; font-size: 24px; font-weight: 700; margin-top: 0;'>🎯 Qué aprenderás en este curso</h3>\n    <?php\n    $objetivos = get_post_meta(get_the_ID(), 'curso_objetivos', true);\n    if ($objetivos) {\n      echo '<div style=\"color: #4b5563; line-height: 1.8; font-size: 16px;\">' . wpautop($objetivos) . '</div>';\n    } else {\n      echo '<ul style=\"list-style: none; padding: 0; display: grid; gap: 16px;\">';\n      echo '<li style=\"display: flex; gap: 12px; align-items: flex-start;\"><span style=\"background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;\">✓</span><span style=\"color: #4b5563; line-height: 1.8;\">Dominar los conceptos fundamentales y avanzados del curso</span></li>';\n      echo '<li style=\"display: flex; gap: 12px; align-items: flex-start;\"><span style=\"background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;\">✓</span><span style=\"color: #4b5563; line-height: 1.8;\">Aplicar lo aprendido en proyectos reales</span></li>';\n      echo '<li style=\"display: flex; gap: 12px; align-items: flex-start;\"><span style=\"background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;\">✓</span><span style=\"color: #4b5563; line-height: 1.8;\">Desarrollar habilidades prácticas demandadas por empresas</span></li>';\n      echo '<li style=\"display: flex; gap: 12px; align-items: flex-start;\"><span style=\"background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;\">✓</span><span style=\"color: #4b5563; line-height: 1.8;\">Obtener certificación oficial al finalizar</span></li>';\n      echo '</ul>';\n    }\n    ?>\n  </div>\n\n  <div class='cursostic-tab-content' data-content='temario' style='display: none; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);'>\n    <h3 style='color: #1f2937; font-size: 24px; font-weight: 700; margin-top: 0;'>📚 Contenido del Curso</h3>\n    <?php\n    $temario = get_post_meta(get_the_ID(), 'curso_temario', true);\n    if ($temario) {\n      echo '<div style=\"color: #4b5563; line-height: 1.8; font-size: 16px;\">' . wpautop($temario) . '</div>';\n    } else {\n      echo '<div class=\"cursostic-accordion\">';\n      for ($i = 1; $i <= 4; $i++) {\n        echo '<div class=\"accordion-item\" style=\"border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px; overflow: hidden;\">';\n        echo '<button class=\"accordion-header\" style=\"width: 100%; padding: 18px 24px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 16px; color: #1f2937; transition: background 0.2s;\" onmouseover=\"this.style.background=\\'#f9fafb\\'\" onmouseout=\"this.style.background=\\'white\\'\"><span>📖 Módulo ' . $i . ': Contenido del módulo</span><span style=\"color: #2563eb; font-size: 20px;\">+</span></button>';\n        echo '<div class=\"accordion-content\" style=\"display: none; padding: 20px 24px; background: #f9fafb; color: #6b7280; line-height: 1.8;\"><ul style=\"margin: 0; padding-left: 20px;\"><li>Lección 1</li><li>Lección 2</li><li>Lección 3</li><li>Quiz del módulo</li></ul></div>';\n        echo '</div>';\n      }\n      echo '</div>';\n    }\n    ?>\n  </div>\n\n  <div class='cursostic-tab-content' data-content='requisitos' style='display: none; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);'>\n    <h3 style='color: #1f2937; font-size: 24px; font-weight: 700; margin-top: 0;'>✅ Requisitos Previos</h3>\n    <?php\n    $requisitos = get_post_meta(get_the_ID(), 'curso_requisitos', true);\n    if ($requisitos) {\n      echo '<div style=\"color: #4b5563; line-height: 1.8; font-size: 16px;\">' . wpautop($requisitos) . '</div>';\n    } else {\n      echo '<ul style=\"list-style: none; padding: 0; display: grid; gap: 12px;\">';\n      echo '<li style=\"display: flex; gap: 12px; align-items: center;\"><span style=\"color: #2563eb; font-size: 20px;\">✓</span><span style=\"color: #4b5563;\">Conocimientos básicos de informática</span></li>';\n      echo '<li style=\"display: flex; gap: 12px; align-items: center;\"><span style=\"color: #2563eb; font-size: 20px;\">✓</span><span style=\"color: #4b5563;\">Ordenador con conexión a internet</span></li>';\n      echo '<li style=\"display: flex; gap: 12px; align-items: center;\"><span style=\"color: #2563eb; font-size: 20px;\">✓</span><span style=\"color: #4b5563;\">Ganas de aprender y dedicación</span></li>';\n      echo '</ul>';\n    }\n    ?>\n  </div>\n</div>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', function() {\n  // Tabs functionality\n  const tabBtns = document.querySelectorAll('.cursostic-tab-btn');\n  const tabContents = document.querySelectorAll('.cursostic-tab-content');\n  \n  tabBtns.forEach(btn => {\n    btn.addEventListener('click', function() {\n      const targetTab = this.dataset.tab;\n      \n      // Remove active class from all buttons\n      tabBtns.forEach(b => {\n        b.classList.remove('active');\n        b.style.background = '#f3f4f6';\n        b.style.color = '#6b7280';\n      });\n      \n      // Add active class to clicked button\n      this.classList.add('active');\n      this.style.background = '#2563eb';\n      this.style.color = 'white';\n      \n      // Hide all tab contents\n      tabContents.forEach(content => {\n        content.style.display = 'none';\n      });\n      \n      // Show target content\n      const targetContent = document.querySelector('[data-content=\"' + targetTab + '\"]');\n      if (targetContent) {\n        targetContent.style.display = 'block';\n      }\n    });\n  });\n  \n  // Accordion functionality\n  const accordionHeaders = document.querySelectorAll('.accordion-header');\n  accordionHeaders.forEach(header => {\n    header.addEventListener('click', function() {\n      const content = this.nextElementSibling;\n      const icon = this.querySelector('span:last-child');\n      \n      if (content.style.display === 'none' || !content.style.display) {\n        content.style.display = 'block';\n        icon.textContent = '-';\n      } else {\n        content.style.display = 'none';\n        icon.textContent = '+';\n      }\n    });\n  });\n});\n</script>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sidebar-column",
+          "elType": "column",
+          "settings": {
+            "_column_size": 33,
+            "_column_order": 2
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style='position: sticky; top: 100px;'>\n  <div style='background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 2px solid #e5e7eb;'>\n    <?php\n    $precio = get_post_meta(get_the_ID(), 'curso_precio', true);\n    $precio_oferta = get_post_meta(get_the_ID(), 'curso_precio_oferta', true);\n    \n    echo '<div style=\"margin-bottom: 25px;\">';\n    if ($precio_oferta && $precio_oferta < $precio) {\n      echo '<div style=\"display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;\">';\n      echo '<span style=\"font-size: 42px; font-weight: 800; color: #2563eb;\">' . esc_html($precio_oferta) . '€</span>';\n      echo '<span style=\"font-size: 24px; color: #9ca3af; text-decoration: line-through;\">' . esc_html($precio) . '€</span>';\n      echo '</div>';\n      $descuento = round((($precio - $precio_oferta) / $precio) * 100);\n      echo '<span style=\"display: inline-block; background: #ef4444; color: white; padding: 4px 12px; border-radius: 6px; font-size: 14px; font-weight: 700;\">🔥 Ahorra ' . $descuento . '%</span>';\n    } else if ($precio && $precio > 0) {\n      echo '<div style=\"font-size: 42px; font-weight: 800; color: #2563eb;\">' . esc_html($precio) . '€</div>';\n    } else {\n      echo '<div style=\"font-size: 42px; font-weight: 800; color: #10b981;\">GRATIS</div>';\n    }\n    echo '</div>';\n    \n    // Botón de inscripción\n    echo '<a href=\"#inscripcion\" style=\"display: block; width: 100%; padding: 16px; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white; text-align: center; text-decoration: none; font-weight: 700; font-size: 18px; border-radius: 12px; margin-bottom: 15px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);\" onmouseover=\"this.style.transform=\\'translateY(-2px)\\'; this.style.boxShadow=\\'0 6px 20px rgba(37, 99, 235, 0.5)\\';\" onmouseout=\"this.style.transform=\\'translateY(0)\\'; this.style.boxShadow=\\'0 4px 12px rgba(37, 99, 235, 0.4)\\';\">';\n    echo '🎓 Inscribirme Ahora';\n    echo '</a>';\n    \n    // Fecha inicio\n    $fecha_inicio = get_post_meta(get_the_ID(), 'curso_fecha_inicio', true);\n    if ($fecha_inicio) {\n      echo '<p style=\"text-align: center; color: #6b7280; font-size: 14px; margin: 0 0 20px 0;\">📅 Inicio: ' . esc_html($fecha_inicio) . '</p>';\n    }\n    \n    echo '<div style=\"border-top: 2px solid #e5e7eb; padding-top: 20px; margin-top: 20px;\">';\n    echo '<h4 style=\"color: #1f2937; font-size: 16px; font-weight: 700; margin: 0 0 15px 0;\">📋 Información del Curso</h4>';\n    echo '<div style=\"display: flex; flex-direction: column; gap: 12px;\">';\n    \n    // Duración\n    $duracion = get_post_meta(get_the_ID(), 'curso_duracion', true);\n    if ($duracion) {\n      echo '<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f3f4f6;\">';\n      echo '<span style=\"color: #6b7280; font-size: 14px;\">⏱️ Duración</span>';\n      echo '<span style=\"color: #1f2937; font-weight: 600; font-size: 14px;\">' . esc_html($duracion) . '</span>';\n      echo '</div>';\n    }\n    \n    // Modalidad\n    $modalidad = get_the_terms(get_the_ID(), 'modalidad-curso');\n    if ($modalidad && !is_wp_error($modalidad)) {\n      $mod = array_shift($modalidad);\n      echo '<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f3f4f6;\">';\n      echo '<span style=\"color: #6b7280; font-size: 14px;\">💻 Modalidad</span>';\n      echo '<span style=\"color: #1f2937; font-weight: 600; font-size: 14px;\">' . esc_html($mod->name) . '</span>';\n      echo '</div>';\n    }\n    \n    // Nivel\n    $nivel = get_the_terms(get_the_ID(), 'nivel-curso');\n    if ($nivel && !is_wp_error($nivel)) {\n      $nivel_term = array_shift($nivel);\n      echo '<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f3f4f6;\">';\n      echo '<span style=\"color: #6b7280; font-size: 14px;\">📊 Nivel</span>';\n      echo '<span style=\"color: #1f2937; font-weight: 600; font-size: 14px;\">' . esc_html($nivel_term->name) . '</span>';\n      echo '</div>';\n    }\n    \n    // Certificado\n    $certificado = get_post_meta(get_the_ID(), 'curso_certificado', true);\n    if ($certificado) {\n      echo '<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f3f4f6;\">';\n      echo '<span style=\"color: #6b7280; font-size: 14px;\">🏆 Certificado</span>';\n      echo '<span style=\"color: #10b981; font-weight: 600; font-size: 14px;\">✓ Incluido</span>';\n      echo '</div>';\n    }\n    \n    echo '</div>';\n    echo '</div>';\n    \n    // Instructor\n    $instructor = get_post_meta(get_the_ID(), 'curso_instructor', true);\n    if ($instructor) {\n      echo '<div style=\"border-top: 2px solid #e5e7eb; padding-top: 20px; margin-top: 20px;\">';\n      echo '<h4 style=\"color: #1f2937; font-size: 16px; font-weight: 700; margin: 0 0 12px 0;\">👨‍🏫 Instructor</h4>';\n      echo '<p style=\"color: #4b5563; font-size: 14px; line-height: 1.6; margin: 0;\">' . esc_html($instructor) . '</p>';\n      echo '</div>';\n    }\n    \n    // Garantía\n    echo '<div style=\"background: #eff6ff; padding: 15px; border-radius: 8px; margin-top: 20px; border: 2px solid #2563eb;\">';\n    echo '<p style=\"margin: 0; font-size: 13px; color: #1e40af; text-align: center; font-weight: 600;\">✓ Garantía de 30 días<br>✓ Acceso ilimitado de por vida<br>✓ Certificado incluido</p>';\n    echo '</div>';\n    ?>\n  </div>\n</div>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "related-courses-section",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f9fafb",
+        "padding": {"unit": "px", "top": "60", "bottom": "60"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "🔗 Cursos Relacionados",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1f2937",
+              "typography_font_size": {"unit": "px", "size": 32},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "html",
+            "settings": {
+              "html": "<?php\n$current_post_id = get_the_ID();\n$categoria = get_the_terms($current_post_id, 'categoria-curso');\n\nif ($categoria && !is_wp_error($categoria)) {\n  $categoria_ids = wp_list_pluck($categoria, 'term_id');\n  \n  $args = array(\n    'post_type' => 'curso',\n    'posts_per_page' => 3,\n    'post__not_in' => array($current_post_id),\n    'tax_query' => array(\n      array(\n        'taxonomy' => 'categoria-curso',\n        'field' => 'term_id',\n        'terms' => $categoria_ids,\n      ),\n    ),\n  );\n  \n  $related_query = new WP_Query($args);\n  \n  if ($related_query->have_posts()) {\n    echo '<div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;\">';\n    \n    while ($related_query->have_posts()) {\n      $related_query->the_post();\n      echo '<a href=\"' . get_permalink() . '\" style=\"text-decoration: none; display: block;\">';\n      echo '<div style=\"background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s; height: 100%;\" onmouseover=\"this.style.transform=\\'translateY(-4px)\\'; this.style.boxShadow=\\'0 8px 24px rgba(37, 99, 235, 0.15)\\';\" onmouseout=\"this.style.transform=\\'translateY(0)\\'; this.style.boxShadow=\\'0 2px 8px rgba(0,0,0,0.06)\\';\">';\n      \n      if (has_post_thumbnail()) {\n        echo '<div style=\"height: 200px; overflow: hidden;\">';\n        the_post_thumbnail('medium', array('style' => 'width: 100%; height: 100%; object-fit: cover;'));\n        echo '</div>';\n      }\n      \n      echo '<div style=\"padding: 24px;\">';\n      echo '<h3 style=\"color: #1f2937; font-size: 18px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.4;\">' . get_the_title() . '</h3>';\n      echo '<p style=\"color: #6b7280; font-size: 14px; line-height: 1.6; margin: 0 0 15px 0;\">' . wp_trim_words(get_the_excerpt(), 15) . '</p>';\n      \n      $precio = get_post_meta(get_the_ID(), 'curso_precio', true);\n      if ($precio && $precio > 0) {\n        echo '<div style=\"font-size: 24px; font-weight: 700; color: #2563eb;\">' . esc_html($precio) . '€</div>';\n      } else {\n        echo '<div style=\"font-size: 20px; font-weight: 700; color: #10b981;\">GRATIS</div>';\n      }\n      \n      echo '</div>';\n      echo '</div>';\n      echo '</a>';\n    }\n    \n    echo '</div>';\n    wp_reset_postdata();\n  }\n}\n?>"
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "faq-section",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "padding": {"unit": "px", "top": "60", "bottom": "60"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "❓ Preguntas Frecuentes",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1f2937",
+              "typography_font_size": {"unit": "px", "size": 32},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "accordion",
+            "settings": {
+              "tabs": [
+                {
+                  "tab_title": "¿Cuándo puedo empezar el curso?",
+                  "tab_content": "Puedes empezar inmediatamente después de inscribirte. Tendrás acceso ilimitado de por vida al contenido."
+                },
+                {
+                  "tab_title": "¿Necesito conocimientos previos?",
+                  "tab_content": "Los requisitos previos están indicados en la pestaña de Requisitos. En general, solo necesitas conocimientos básicos de informática."
+                },
+                {
+                  "tab_title": "¿Obtengo certificado?",
+                  "tab_content": "Sí, al completar el curso recibirás un certificado oficial que puedes compartir en LinkedIn y tu CV."
+                },
+                {
+                  "tab_title": "¿Hay garantía de devolución?",
+                  "tab_content": "Ofrecemos garantía de 30 días. Si no estás satisfecho, te devolvemos el 100% de tu inversión."
+                },
+                {
+                  "tab_title": "¿El curso incluye soporte?",
+                  "tab_content": "Sí, tienes acceso a nuestro foro de estudiantes y soporte directo del instructor."
+                }
+              ],
+              "icon": {"value": "fas fa-plus", "library": "fa-solid"},
+              "icon_active": {"value": "fas fa-minus", "library": "fa-solid"},
+              "title_color": "#1f2937",
+              "title_typography_font_weight": "600",
+              "content_color": "#6b7280",
+              "border_width": {"unit": "px", "top": 2, "right": 2, "bottom": 2, "left": 2},
+              "border_color": "#e5e7eb",
+              "border_radius": {"unit": "px", "top": 8, "right": 8, "bottom": 8, "left": 8}
+            }
+          }
+        ]
+      }]
+    }
+  ],
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "elementor_theme",
+    "post_status": "publish"
+  },
+  "version": "3.18.0",
+  "title": "Single Curso - CursosTIC",
+  "type": "single-curso"
+}
