@@ -1,0 +1,283 @@
+{
+  "content": [
+    {
+      "id": "header-section",
+      "elType": "section",
+      "settings": {
+        "structure": "10",
+        "background_background": "gradient",
+        "background_color": "#2563eb",
+        "background_color_b": "#1e40af",
+        "background_gradient_angle": {"unit": "deg", "size": 135},
+        "padding": {"unit": "px", "top": "60", "right": "20", "bottom": "60", "left": "20"},
+        "content_position": "middle"
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Catálogo de Cursos TIC",
+              "header_size": "h1",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_font_size": {"unit": "px", "size": 42},
+              "typography_font_size_mobile": {"unit": "px", "size": 28},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style='text-align: center; color: #ffffff; font-size: 18px; opacity: 0.95;'>Encuentra el curso perfecto para impulsar tu carrera profesional</p>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "search-form",
+            "settings": {
+              "placeholder": "Buscar cursos por nombre...",
+              "button_type": "icon",
+              "skin": "classic",
+              "input_size": "lg",
+              "border_radius": {"unit": "px", "top": 50, "right": 50, "bottom": 50, "left": 50}
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "main-content",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": {"unit": "px", "size": 1400},
+        "gap": "extended",
+        "padding": {"unit": "px", "top": "60", "bottom": "60"}
+      },
+      "elements": [
+        {
+          "id": "sidebar-column",
+          "elType": "column",
+          "settings": {
+            "_column_size": 25,
+            "background_background": "classic",
+            "background_color": "#ffffff",
+            "border_border": "solid",
+            "border_width": {"unit": "px", "top": 1, "right": 1, "bottom": 1, "left": 1},
+            "border_color": "#e5e7eb",
+            "border_radius": {"unit": "px", "top": 12, "right": 12, "bottom": 12, "left": 12},
+            "padding": {"unit": "px", "top": 30, "right": 25, "bottom": 30, "left": 25},
+            "box_shadow_box_shadow_type": "yes",
+            "box_shadow_box_shadow": {"horizontal": 0, "vertical": 2, "blur": 10, "color": "rgba(0,0,0,0.05)"}
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "🔍 Filtrar Cursos",
+                "header_size": "h3",
+                "title_color": "#1f2937",
+                "typography_font_size": {"unit": "px", "size": 20},
+                "typography_font_weight": "600"
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "divider",
+              "settings": {
+                "style": "solid",
+                "weight": {"unit": "px", "size": 2},
+                "color": "#e5e7eb",
+                "gap": {"unit": "px", "size": 20}
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class='cursostic-sidebar-filters'>\n  <div class='filter-group' style='margin-bottom: 25px;'>\n    <label style='display: block; font-weight: 600; margin-bottom: 10px; color: #1f2937;'>Categoría</label>\n    <select id='filter-categoria' style='width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 14px;'>\n      <option value=''>Todas las categorías</option>\n      <!-- Se rellenará automáticamente -->\n    </select>\n  </div>\n  \n  <div class='filter-group' style='margin-bottom: 25px;'>\n    <label style='display: block; font-weight: 600; margin-bottom: 10px; color: #1f2937;'>Nivel</label>\n    <select id='filter-nivel' style='width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 14px;'>\n      <option value=''>Todos los niveles</option>\n      <!-- Se rellenará automáticamente -->\n    </select>\n  </div>\n  \n  <div class='filter-group' style='margin-bottom: 25px;'>\n    <label style='display: block; font-weight: 600; margin-bottom: 10px; color: #1f2937;'>Modalidad</label>\n    <select id='filter-modalidad' style='width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 14px;'>\n      <option value=''>Todas las modalidades</option>\n      <!-- Se rellenará automáticamente -->\n    </select>\n  </div>\n  \n  <div class='filter-group' style='margin-bottom: 25px;'>\n    <label style='display: block; font-weight: 600; margin-bottom: 10px; color: #1f2937;'>Precio</label>\n    <select id='filter-precio' style='width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 14px;'>\n      <option value=''>Todos</option>\n      <option value='gratis'>Gratuitos</option>\n      <option value='pago'>De pago</option>\n    </select>\n  </div>\n  \n  <button class='cursostic-btn-apply' style='width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-bottom: 10px;'>Aplicar Filtros</button>\n  \n  <button class='cursostic-btn-reset' style='width: 100%; padding: 14px; background: #f3f4f6; color: #6b7280; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;'>Limpiar Filtros</button>\n</div>"
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "divider",
+              "settings": {
+                "gap": {"unit": "px", "size": 20}
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": {"value": "fas fa-lightbulb", "library": "fa-solid"},
+                "title_text": "Tip",
+                "description_text": "Usa los filtros para encontrar el curso que mejor se adapte a tus necesidades",
+                "icon_primary_color": "#f59e0b",
+                "icon_size": {"unit": "px", "size": 30},
+                "box_background_color": "#fffbeb",
+                "box_padding": {"unit": "px", "top": 20, "right": 15, "bottom": 20, "left": 15},
+                "box_border_radius": {"unit": "px", "top": 8, "right": 8, "bottom": 8, "left": 8},
+                "title_color": "#d97706",
+                "description_color": "#92400e"
+              }
+            }
+          ]
+        },
+        {
+          "id": "courses-column",
+          "elType": "column",
+          "settings": {"_column_size": 75},
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);'>\n  <div>\n    <h2 style='margin: 0; font-size: 24px; color: #1f2937;'><span id='total-cursos'>12</span> Cursos Disponibles</h2>\n    <p style='margin: 5px 0 0 0; color: #6b7280;'>Actualizado recientemente</p>\n  </div>\n  <div>\n    <label style='margin-right: 10px; color: #6b7280;'>Ordenar por:</label>\n    <select id='ordenar-por' style='padding: 10px 15px; border: 2px solid #e5e7eb; border-radius: 8px;'>\n      <option value='date'>Más recientes</option>\n      <option value='title'>A-Z</option>\n      <option value='popular'>Más populares</option>\n      <option value='price-asc'>Precio: menor a mayor</option>\n      <option value='price-desc'>Precio: mayor a menor</option>\n    </select>\n  </div>\n</div>"
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "cursostic_curso_grid",
+              "settings": {
+                "posts_per_page": 12,
+                "show_featured_only": "no",
+                "orderby": "date",
+                "order": "DESC",
+                "columns": 2,
+                "columns_tablet": 1,
+                "columns_mobile": 1
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class='cursostic-pagination' style='margin-top: 40px; text-align: center;'>\n  <!-- La paginación se añadirá automáticamente -->\n</div>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-section",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f9fafb",
+        "padding": {"unit": "px", "top": "60", "bottom": "60"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "❓ Preguntas Frecuentes",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1f2937",
+              "typography_font_size": {"unit": "px", "size": 36},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "accordion",
+            "settings": {
+              "tabs": [
+                {
+                  "tab_title": "¿Cómo me inscribo en un curso?",
+                  "tab_content": "Haz clic en el botón 'Inscribirme' en la ficha del curso. Serás redirigido al proceso de inscripción donde podrás completar tu matrícula."
+                },
+                {
+                  "tab_title": "¿Los cursos tienen certificado?",
+                  "tab_content": "Sí, todos nuestros cursos incluyen certificado oficial al finalizar. Puedes ver esta información en la ficha de cada curso."
+                },
+                {
+                  "tab_title": "¿Puedo acceder desde móvil?",
+                  "tab_content": "Por supuesto. Nuestra plataforma es 100% responsive y puedes acceder desde cualquier dispositivo: ordenador, tablet o smartphone."
+                },
+                {
+                  "tab_title": "¿Hay cursos gratuitos?",
+                  "tab_content": "Sí, ofrecemos una amplia selección de cursos completamente gratuitos. Usa el filtro 'Precio → Gratuitos' para verlos todos."
+                },
+                {
+                  "tab_title": "¿Cuánto tiempo tengo para completar un curso?",
+                  "tab_content": "Depende del curso. Algunos tienen fechas específicas de inicio y fin, mientras que otros permiten aprender a tu propio ritmo. Revisa los detalles en cada ficha de curso."
+                }
+              ],
+              "icon": "fas fa-plus",
+              "icon_active": "fas fa-minus",
+              "title_color": "#1f2937",
+              "icon_color": "#2563eb",
+              "background_color": "#ffffff",
+              "border_border": "solid",
+              "border_width": {"unit": "px", "top": 1, "right": 1, "bottom": 1, "left": 1},
+              "border_color": "#e5e7eb",
+              "border_radius": {"unit": "px", "top": 8, "right": 8, "bottom": 8, "left": 8}
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "newsletter-section",
+      "elType": "section",
+      "settings": {
+        "background_background": "gradient",
+        "background_color": "#2563eb",
+        "background_color_b": "#1e40af",
+        "padding": {"unit": "px", "top": "60", "bottom": "60"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "📧 No te pierdas ningún curso nuevo",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_font_size": {"unit": "px", "size": 32},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style='text-align: center; color: #ffffff; font-size: 18px; opacity: 0.95;'>Suscríbete a nuestro boletín y recibe las últimas novedades</p>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "shortcode",
+            "settings": {
+              "shortcode": "[contact-form-7 id='TU_ID_AQUI']"
+            }
+          }
+        ]
+      }]
+    }
+  ],
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "elementor_theme",
+    "site_width": "1400"
+  },
+  "version": "3.18.0",
+  "title": "CursosTIC - Página de Cursos con Filtros",
+  "type": "page"
+}

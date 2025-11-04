@@ -1,6 +1,27 @@
-# 🚀 IMPORTAR TEMPLATES DE ELEMENTOR - GUÍA SÚPER FÁCIL
+# 🚀 TEMPLATES DE ELEMENTOR LISTOS PARA IMPORTAR
 
-## ✅ SOLUCIÓN EN 3 PASOS
+## 📦 TEMPLATES DISPONIBLES
+
+### 1️⃣ **home-template-pro.json** - Página de Inicio Profesional
+✅ Hero banner con gradiente y estadísticas
+✅ Sección de cursos destacados automática
+✅ Tarjetas de categorías con iconos
+✅ Sección de beneficios con imágenes
+✅ Call to action final
+✅ 100% responsive
+
+### 2️⃣ **cursos-template-pro.json** - Catálogo de Cursos con Filtros
+✅ Header con buscador integrado
+✅ Sidebar con filtros (categoría, nivel, modalidad, precio)
+✅ Grid de cursos en 2 columnas
+✅ Contador de resultados y ordenación
+✅ FAQ con accordion
+✅ Newsletter section
+✅ Compatible con plugins de filtros avanzados
+
+---
+
+## ✅ INSTALACIÓN EN 3 PASOS
 
 Ya NO necesitas diseñar nada. Los templates están listos para importar.
 
@@ -174,20 +195,43 @@ Fondo:       #f9fafb (gris claro)
 
 En la carpeta `elementor-templates/`:
 
-- ✅ **`home-template.json`** - Página de inicio completa
-- ⏳ **`cursos-template.json`** - Página de cursos (próximamente)
+- ✅ **`home-template-pro.json`** - Página de inicio profesional completa
+- ✅ **`cursos-template-pro.json`** - Página de cursos con filtros sidebar
+- 📖 **`README.md`** - Esta guía de instalación
+
+**ARCHIVOS ANTIGUOS (deprecados):**
+- ~~home-template.json~~ - Usar home-template-pro.json en su lugar
 
 ---
 
-## 🎓 SIGUIENTES PASOS
+## 🎓 GUÍA COMPLETA DE INSTALACIÓN
 
-1. ✅ Importar template de inicio
+### PASO A: Página de Inicio
+
+1. ✅ Importar `home-template-pro.json`
 2. ✅ Aplicar a página "Inicio"
-3. ✅ Configurar Ajustes → Lectura
+3. ✅ Configurar Ajustes → Lectura → Página estática
 4. ✅ Publicar algunos cursos
 5. ✅ Marcar cursos como destacados
-6. ✅ Verificar que se ve correctamente
-7. 🎨 Personalizar colores y textos (opcional)
+6. ✅ Personalizar textos y colores
+7. ✅ Cambiar estadísticas (500 cursos, 15000 estudiantes, etc.)
+
+### PASO B: Página de Cursos
+
+1. ✅ Importar `cursos-template-pro.json`
+2. ✅ Crear página "Cursos"
+3. ✅ Aplicar el template importado
+4. ✅ Los filtros funcionarán automáticamente
+5. ✅ Opcional: Instalar plugin de filtros avanzados (ver PLUGINS-FILTROS.md)
+6. ✅ Configurar URL: `/cursos/` en Ajustes → Enlaces permanentes
+
+### PASO C: Personalización
+
+1. 🎨 Edita textos con Elementor
+2. 🎨 Cambia colores (usa: #2563eb, #10b981, #f59e0b)
+3. 🎨 Ajusta imágenes de fondo
+4. 🎨 Añade tu logo en el header de Astra
+5. 🎨 Configura footer con widgets
 
 ---
 

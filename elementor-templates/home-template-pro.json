@@ -1,0 +1,455 @@
+{
+  "content": [
+    {
+      "id": "hero-section",
+      "elType": "section",
+      "settings": {
+        "structure": "10",
+        "background_background": "gradient",
+        "background_color": "#2563eb",
+        "background_color_b": "#1e40af",
+        "background_gradient_angle": {"unit": "deg", "size": 135},
+        "background_image": {"url": ""},
+        "background_overlay_background": "classic",
+        "background_overlay_color": "rgba(0,0,0,0.3)",
+        "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"},
+        "padding_tablet": {"unit": "px", "top": "60", "bottom": "60"},
+        "padding_mobile": {"unit": "px", "top": "40", "bottom": "40"},
+        "height": "600",
+        "content_position": "middle"
+      },
+      "elements": [{
+        "id": "hero-col",
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Fórmate en las Tecnologías del Futuro",
+              "header_size": "h1",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_typography": "custom",
+              "typography_font_size": {"unit": "px", "size": 52},
+              "typography_font_size_tablet": {"unit": "px", "size": 38},
+              "typography_font_size_mobile": {"unit": "px", "size": 28},
+              "typography_font_weight": "700",
+              "typography_line_height": {"unit": "em", "size": 1.2},
+              "text_shadow_text_shadow_type": "yes",
+              "text_shadow_text_shadow": {"horizontal": 0, "vertical": 2, "blur": 10, "color": "rgba(0,0,0,0.3)"}
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style='text-align: center; font-size: 22px; color: #ffffff; opacity: 0.95; max-width: 700px; margin: 20px auto;'>Descubre nuestra amplia oferta formativa en Tecnologías de la Información y Comunicación. Cursos diseñados por expertos para impulsar tu carrera profesional.</p>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "🎓 Ver Todos los Cursos",
+              "link": {"url": "/cursos/"},
+              "align": "center",
+              "size": "lg",
+              "button_type": "success",
+              "background_color": "#10b981",
+              "hover_background_color": "#059669",
+              "button_text_color": "#ffffff",
+              "typography_font_size": {"unit": "px", "size": 18},
+              "typography_font_weight": "700",
+              "border_radius": {"unit": "px", "top": 50, "right": 50, "bottom": 50, "left": 50},
+              "button_padding": {"unit": "px", "top": 20, "right": 50, "bottom": 20, "left": 50},
+              "box_shadow_box_shadow_type": "yes",
+              "box_shadow_box_shadow": {"horizontal": 0, "vertical": 4, "blur": 20, "color": "rgba(0,0,0,0.3)"}
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "stats-section",
+      "elType": "section",
+      "settings": {
+        "structure": "14",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": {"unit": "px", "top": "80", "bottom": "80"},
+        "margin": {"unit": "px", "top": "-50"},
+        "z_index": "10",
+        "border_radius": {"unit": "px", "top": 20, "right": 20, "bottom": 20, "left": 20},
+        "box_shadow_box_shadow_type": "yes",
+        "box_shadow_box_shadow": {"horizontal": 0, "vertical": 10, "blur": 30, "color": "rgba(0,0,0,0.1)"}
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {"_column_size": 25},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "counter",
+            "settings": {
+              "starting_number": 0,
+              "ending_number": 500,
+              "prefix": "+",
+              "title": "Cursos Disponibles",
+              "number_color": "#2563eb",
+              "title_color": "#6b7280",
+              "typography_font_size": {"unit": "px", "size": 48},
+              "typography_font_weight": "700"
+            }
+          }]
+        },
+        {
+          "elType": "column",
+          "settings": {"_column_size": 25},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "counter",
+            "settings": {
+              "starting_number": 0,
+              "ending_number": 15000,
+              "prefix": "+",
+              "title": "Estudiantes Activos",
+              "number_color": "#10b981",
+              "title_color": "#6b7280",
+              "typography_font_size": {"unit": "px", "size": 48},
+              "typography_font_weight": "700"
+            }
+          }]
+        },
+        {
+          "elType": "column",
+          "settings": {"_column_size": 25},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "counter",
+            "settings": {
+              "starting_number": 0,
+              "ending_number": 98,
+              "suffix": "%",
+              "title": "Satisfacción",
+              "number_color": "#f59e0b",
+              "title_color": "#6b7280",
+              "typography_font_size": {"unit": "px", "size": 48},
+              "typography_font_weight": "700"
+            }
+          }]
+        },
+        {
+          "elType": "column",
+          "settings": {"_column_size": 25},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "counter",
+            "settings": {
+              "starting_number": 0,
+              "ending_number": 50,
+              "prefix": "+",
+              "title": "Certificaciones",
+              "number_color": "#8b5cf6",
+              "title_color": "#6b7280",
+              "typography_font_size": {"unit": "px", "size": 48},
+              "typography_font_weight": "700"
+            }
+          }]
+        }
+      ]
+    },
+    {
+      "id": "featured-courses",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f9fafb",
+        "padding": {"unit": "px", "top": "80", "bottom": "80"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "🎯 Cursos Destacados",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1f2937",
+              "typography_font_size": {"unit": "px", "size": 42},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style='text-align: center; color: #6b7280; font-size: 18px; max-width: 600px; margin: 0 auto 50px;'>Los cursos más demandados y mejor valorados por nuestros estudiantes</p>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "cursostic_curso_grid",
+            "settings": {
+              "posts_per_page": 6,
+              "show_featured_only": "yes",
+              "orderby": "date",
+              "order": "DESC"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Ver Todos los Cursos →",
+              "link": {"url": "/cursos/"},
+              "align": "center",
+              "button_type": "default",
+              "background_color": "#2563eb",
+              "typography_font_size": {"unit": "px", "size": 16},
+              "border_radius": {"unit": "px", "top": 8, "right": 8, "bottom": 8, "left": 8},
+              "button_padding": {"unit": "px", "top": 15, "right": 35, "bottom": 15, "left": 35}
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "categories-section",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": {"unit": "px", "top": "80", "bottom": "80"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "📚 Explora por Categorías",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1f2937",
+              "typography_font_size": {"unit": "px", "size": 42},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style='text-align: center; color: #6b7280; font-size: 18px; margin-bottom: 50px;'>Encuentra el curso perfecto según tu área de interés</p>"
+            }
+          }
+        ]
+      }]
+    },
+    {
+      "id": "categories-boxes",
+      "elType": "section",
+      "settings": {
+        "structure": "33",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": {"unit": "px", "top": "0", "bottom": "80"},
+        "gap": "extended"
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {"_column_size": 33},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {"value": "fas fa-code", "library": "fa-solid"},
+              "title_text": "Programación",
+              "description_text": "Aprende los lenguajes más demandados del mercado",
+              "link": {"url": "/categoria-curso/programacion/"},
+              "icon_primary_color": "#2563eb",
+              "icon_size": {"unit": "px", "size": 60},
+              "title_color": "#1f2937",
+              "description_color": "#6b7280",
+              "box_background_color": "#f0f9ff",
+              "box_padding": {"unit": "px", "top": 40, "right": 30, "bottom": 40, "left": 30},
+              "box_border_radius": {"unit": "px", "top": 12, "right": 12, "bottom": 12, "left": 12}
+            }
+          }]
+        },
+        {
+          "elType": "column",
+          "settings": {"_column_size": 33},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {"value": "fas fa-network-wired", "library": "fa-solid"},
+              "title_text": "Redes y Sistemas",
+              "description_text": "Domina la infraestructura tecnológica empresarial",
+              "link": {"url": "/categoria-curso/redes/"},
+              "icon_primary_color": "#10b981",
+              "icon_size": {"unit": "px", "size": 60},
+              "title_color": "#1f2937",
+              "description_color": "#6b7280",
+              "box_background_color": "#f0fdf4",
+              "box_padding": {"unit": "px", "top": 40, "right": 30, "bottom": 40, "left": 30},
+              "box_border_radius": {"unit": "px", "top": 12, "right": 12, "bottom": 12, "left": 12}
+            }
+          }]
+        },
+        {
+          "elType": "column",
+          "settings": {"_column_size": 33},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {"value": "fas fa-shield-alt", "library": "fa-solid"},
+              "title_text": "Ciberseguridad",
+              "description_text": "Protege sistemas y datos de amenazas digitales",
+              "link": {"url": "/categoria-curso/ciberseguridad/"},
+              "icon_primary_color": "#f59e0b",
+              "icon_size": {"unit": "px", "size": 60},
+              "title_color": "#1f2937",
+              "description_color": "#6b7280",
+              "box_background_color": "#fffbeb",
+              "box_padding": {"unit": "px", "top": 40, "right": 30, "bottom": 40, "left": 30},
+              "box_border_radius": {"unit": "px", "top": 12, "right": 12, "bottom": 12, "left": 12}
+            }
+          }]
+        }
+      ]
+    },
+    {
+      "id": "benefits-section",
+      "elType": "section",
+      "settings": {
+        "structure": "20",
+        "background_background": "gradient",
+        "background_color": "#f0f9ff",
+        "background_color_b": "#ffffff",
+        "padding": {"unit": "px", "top": "80", "bottom": "80"}
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {"_column_size": 50},
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "¿Por qué elegirnos?",
+                "header_size": "h2",
+                "title_color": "#1f2937",
+                "typography_font_size": {"unit": "px", "size": 38},
+                "typography_font_weight": "700"
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {"text": "Contenido actualizado constantemente", "selected_icon": {"value": "fas fa-check-circle", "library": "fa-solid"}},
+                  {"text": "Certificados oficiales reconocidos", "selected_icon": {"value": "fas fa-check-circle", "library": "fa-solid"}},
+                  {"text": "Tutores expertos disponibles 24/7", "selected_icon": {"value": "fas fa-check-circle", "library": "fa-solid"}},
+                  {"text": "Acceso ilimitado de por vida", "selected_icon": {"value": "fas fa-check-circle", "library": "fa-solid"}},
+                  {"text": "Comunidad de +15.000 estudiantes", "selected_icon": {"value": "fas fa-check-circle", "library": "fa-solid"}},
+                  {"text": "Prácticas en empresas colaboradoras", "selected_icon": {"value": "fas fa-check-circle", "library": "fa-solid"}}
+                ],
+                "icon_color": "#10b981",
+                "text_color": "#1f2937",
+                "space_between": {"unit": "px", "size": 15}
+              }
+            }
+          ]
+        },
+        {
+          "elType": "column",
+          "settings": {"_column_size": 50},
+          "elements": [{
+            "elType": "widget",
+            "widgetType": "image",
+            "settings": {
+              "image": {"url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"},
+              "image_size": "large",
+              "border_radius": {"unit": "px", "top": 12, "right": 12, "bottom": 12, "left": 12},
+              "box_shadow_box_shadow_type": "yes",
+              "box_shadow_box_shadow": {"horizontal": 0, "vertical": 10, "blur": 30, "color": "rgba(0,0,0,0.15)"}
+            }
+          }]
+        }
+      ]
+    },
+    {
+      "id": "cta-section",
+      "elType": "section",
+      "settings": {
+        "background_background": "gradient",
+        "background_color": "#2563eb",
+        "background_color_b": "#1e40af",
+        "background_gradient_angle": {"unit": "deg", "size": 135},
+        "padding": {"unit": "px", "top": "100", "bottom": "100"}
+      },
+      "elements": [{
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Comienza tu transformación digital hoy",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_font_size": {"unit": "px", "size": 44},
+              "typography_font_weight": "700"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style='text-align: center; color: #ffffff; font-size: 20px; opacity: 0.95; max-width: 700px; margin: 20px auto 40px;'>Únete a miles de profesionales que ya han impulsado su carrera con nosotros</p>"
+            }
+          },
+          {
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Explorar Cursos Gratis",
+              "link": {"url": "/cursos/"},
+              "align": "center",
+              "size": "lg",
+              "background_color": "#ffffff",
+              "button_text_color": "#2563eb",
+              "hover_background_color": "#f0f9ff",
+              "typography_font_size": {"unit": "px", "size": 18},
+              "typography_font_weight": "700",
+              "border_radius": {"unit": "px", "top": 50, "right": 50, "bottom": 50, "left": 50},
+              "button_padding": {"unit": "px", "top": 20, "right": 50, "bottom": 20, "left": 50}
+            }
+          }
+        ]
+      }]
+    }
+  ],
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "elementor_theme",
+    "site_width": "1200"
+  },
+  "version": "3.18.0",
+  "title": "CursosTIC - Página de Inicio Profesional",
+  "type": "page"
+}
