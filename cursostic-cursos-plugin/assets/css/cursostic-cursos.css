@@ -1,0 +1,76 @@
+/**
+ * CursosTIC Cursos - Frontend Styles
+ * Version: 1.0.0
+ */
+
+/* Grid de Cursos */
+.cursostic-cursos-grid {
+    display: grid;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.cursostic-cursos-grid.columns-2 {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.cursostic-cursos-grid.columns-3 {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.cursostic-cursos-grid.columns-4 {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Filtros */
+.cursostic-filters {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.cursostic-filters select {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.cursostic-btn-filter {
+    padding: 10px 30px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cursostic-btn-filter:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cursostic-cursos-grid.columns-2,
+    .cursostic-cursos-grid.columns-3,
+    .cursostic-cursos-grid.columns-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .cursostic-filters {
+        flex-direction: column;
+    }
+
+    .cursostic-filters select {
+        width: 100%;
+    }
+}

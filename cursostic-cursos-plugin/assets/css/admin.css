@@ -1,0 +1,49 @@
+/**
+ * CursosTIC Cursos - Admin Styles
+ * Version: 1.0.0
+ */
+
+.cursostic-meta-field {
+    margin-bottom: 20px;
+}
+
+.cursostic-meta-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.cursostic-meta-field input[type="text"],
+.cursostic-meta-field input[type="number"],
+.cursostic-meta-field input[type="date"],
+.cursostic-meta-field input[type="url"],
+.cursostic-meta-field textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.cursostic-meta-field textarea {
+    min-height: 120px;
+    font-family: monospace;
+}
+
+.cursostic-meta-field .description {
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.cursostic-meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 782px) {
+    .cursostic-meta-row {
+        grid-template-columns: 1fr;
+    }
+}
