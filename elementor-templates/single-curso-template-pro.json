@@ -210,10 +210,9 @@
   ],
   "page_settings": {
     "hide_title": "yes",
-    "template": "elementor_theme",
-    "post_status": "publish"
+    "template": "elementor_theme"
   },
   "version": "3.18.0",
   "title": "Single Curso - CursosTIC",
-  "type": "single-curso"
+  "type": "page"
 }
