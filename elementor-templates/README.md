@@ -19,6 +19,15 @@
 ✅ Newsletter section
 ✅ Compatible con plugins de filtros avanzados
 
+### 3️⃣ **blog-template-pro.json** - Blog Profesional con Sidebar
+✅ Header con título y descripción
+✅ Layout estilo revista con imágenes destacadas
+✅ Sidebar con búsqueda, categorías y posts recientes
+✅ Tags populares
+✅ Newsletter signup integrado
+✅ CTA para colaboradores
+✅ 100% responsive y profesional
+
 ---
 
 ## ✅ INSTALACIÓN EN 3 PASOS
@@ -197,6 +206,7 @@ En la carpeta `elementor-templates/`:
 
 - ✅ **`home-template-pro.json`** - Página de inicio profesional completa
 - ✅ **`cursos-template-pro.json`** - Página de cursos con filtros sidebar
+- ✅ **`blog-template-pro.json`** - Página de blog estilo revista profesional
 - 📖 **`README.md`** - Esta guía de instalación
 
 **ARCHIVOS ANTIGUOS (deprecados):**
@@ -225,7 +235,16 @@ En la carpeta `elementor-templates/`:
 5. ✅ Opcional: Instalar plugin de filtros avanzados (ver PLUGINS-FILTROS.md)
 6. ✅ Configurar URL: `/cursos/` en Ajustes → Enlaces permanentes
 
-### PASO C: Personalización
+### PASO C: Página de Blog
+
+1. ✅ Importar `blog-template-pro.json`
+2. ✅ Crear página "Blog"
+3. ✅ Aplicar el template importado
+4. ✅ El sidebar mostrará automáticamente categorías y posts recientes
+5. ✅ Configura URL: `/blog/` en Ajustes → Lectura → Página de entradas
+6. ✅ Opcional: Integrar formulario de newsletter (Contact Form 7, Mailchimp, etc.)
+
+### PASO D: Personalización
 
 1. 🎨 Edita textos con Elementor
 2. 🎨 Cambia colores (usa: #2563eb, #10b981, #f59e0b)
