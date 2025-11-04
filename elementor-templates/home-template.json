@@ -1,0 +1,276 @@
+{
+  "content": [
+    {
+      "id": "home-hero",
+      "elType": "section",
+      "settings": {
+        "background_background": "gradient",
+        "background_color": "#2563eb",
+        "background_color_b": "#1e40af",
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 135
+        },
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20"
+        },
+        "height": "500",
+        "height_tablet": "400",
+        "height_mobile": "350"
+      },
+      "elements": [
+        {
+          "id": "hero-column",
+          "elType": "column",
+          "settings": {
+            "width": "100"
+          },
+          "elements": [
+            {
+              "id": "hero-title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Formación TIC de Calidad",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "#ffffff",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 48
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 36
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 28
+                },
+                "typography_font_weight": "700"
+              }
+            },
+            {
+              "id": "hero-subtitle",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Descubre cursos especializados en Tecnologías de la Información y Comunicación",
+                "header_size": "h3",
+                "align": "center",
+                "title_color": "#ffffff",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 16
+                }
+              }
+            },
+            {
+              "id": "hero-button",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Ver Todos los Cursos",
+                "link": {
+                  "url": "/cursos/",
+                  "is_external": false
+                },
+                "align": "center",
+                "button_type": "success",
+                "background_color": "#10b981",
+                "button_text_color": "#ffffff",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "50",
+                  "right": "50",
+                  "bottom": "50",
+                  "left": "50"
+                },
+                "button_padding": {
+                  "unit": "px",
+                  "top": "18",
+                  "right": "40",
+                  "bottom": "18",
+                  "left": "40"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "featured-courses",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f9fafb",
+        "padding": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20"
+        }
+      },
+      "elements": [
+        {
+          "id": "courses-column",
+          "elType": "column",
+          "settings": {
+            "width": "100"
+          },
+          "elements": [
+            {
+              "id": "courses-title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Cursos Destacados",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#1f2937",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 36
+                },
+                "typography_font_weight": "700"
+              }
+            },
+            {
+              "id": "courses-subtitle",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style='text-align: center; color: #6b7280; font-size: 18px;'>Los cursos más populares y recomendados de nuestra plataforma</p>"
+              }
+            },
+            {
+              "id": "courses-grid",
+              "elType": "widget",
+              "widgetType": "cursostic_curso_grid",
+              "settings": {
+                "posts_per_page": 6,
+                "show_featured_only": "yes",
+                "orderby": "date",
+                "order": "DESC"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta-section",
+      "elType": "section",
+      "settings": {
+        "background_background": "gradient",
+        "background_color": "#2563eb",
+        "background_color_b": "#1e40af",
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 135
+        },
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20"
+        }
+      },
+      "elements": [
+        {
+          "id": "cta-column",
+          "elType": "column",
+          "settings": {
+            "width": "100"
+          },
+          "elements": [
+            {
+              "id": "cta-title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "¿Listo para empezar tu formación?",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#ffffff",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 40
+                },
+                "typography_font_weight": "700"
+              }
+            },
+            {
+              "id": "cta-text",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style='text-align: center; color: #ffffff; font-size: 20px; opacity: 0.95;'>Únete a miles de estudiantes que ya están mejorando sus habilidades TIC</p>"
+              }
+            },
+            {
+              "id": "cta-button",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Explorar Cursos",
+                "link": {
+                  "url": "/cursos/",
+                  "is_external": false
+                },
+                "align": "center",
+                "background_color": "#ffffff",
+                "button_text_color": "#2563eb",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "typography_font_weight": "700",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "50",
+                  "right": "50",
+                  "bottom": "50",
+                  "left": "50"
+                },
+                "button_padding": {
+                  "unit": "px",
+                  "top": "18",
+                  "right": "45",
+                  "bottom": "18",
+                  "left": "45"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": {
+    "hide_title": "yes",
+    "template": "elementor_canvas"
+  },
+  "version": "3.0.0",
+  "title": "CursosTIC - Página de Inicio",
+  "type": "page"
+}
